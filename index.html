@@ -266,7 +266,7 @@ smiling, blushing and revisiting memories.
 <br><br><br>
 
 <button id="readyBtn"
-style="
+onclick="showVideoPage()"style="
 opacity:0;
 transition:opacity 1.5s ease;
 background:black;
@@ -294,6 +294,58 @@ document.getElementById("warningBox").style.opacity="1";
 setTimeout(()=>{
 document.getElementById("readyBtn").style.opacity="1";
 },8000);
+
+}
+    function showVideoPage(){
+
+document.body.innerHTML = `
+
+<div style="
+background:black;
+color:#00ff88;
+font-family:Courier New;
+text-align:center;
+padding-top:180px;
+height:100vh;
+">
+
+<div id="memoryTerminal"
+style="
+font-size:28px;
+line-height:2;
+">
+</div>
+
+</div>
+
+`;
+
+let text =
+`> Opening memory file...
+
+> Loading special moments...
+
+> Memory file loaded ✓
+
+> Video coming soon...`;
+
+let i = 0;
+
+function typeMemory(){
+
+if(i < text.length){
+
+document.getElementById("memoryTerminal").innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(typeMemory,40);
+
+}
+
+}
+
+typeMemory();
 
 }
 </script>
