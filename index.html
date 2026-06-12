@@ -108,7 +108,7 @@ COMPLETE
 
 <br><br>
 
-<button id="continueBtn"
+<button id="continueBtn" onclick="showMessagePage()"
 style="
 background:black;
 color:#00ff00;
@@ -141,7 +141,58 @@ cursor:pointer;
     }
 
 }
+function showMessagePage(){
 
+document.body.innerHTML = `
+
+<div style="
+background:black;
+color:white;
+font-family:Arial;
+text-align:center;
+padding-top:120px;
+height:100vh;
+">
+
+<h1>Happy Birthday ❤️</h1>
+
+<br>
+
+<p style="font-size:24px;">
+There are many things I could have given you today...
+</p>
+
+<br>
+
+<p style="font-size:24px;">
+But I wanted to give you something that lasts longer than a gift.
+</p>
+
+<br>
+
+<p style="font-size:24px;">
+Something made only for you.
+</p>
+
+<br><br><br>
+
+<button
+style="
+background:black;
+color:white;
+border:1px solid white;
+padding:15px 30px;
+font-size:20px;
+cursor:pointer;
+">
+[ OPEN YOUR SURPRISE ]
+</button>
+
+</div>
+
+`;
+
+}
 </script>
 
 </body>
