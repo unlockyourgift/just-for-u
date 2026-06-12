@@ -1,47 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Unlock Your Gift</title>
+<meta charset="UTF-8">
+<title>Unlock Your Gift</title>
+
+<style>
+body{
+    background:black;
+    color:white;
+    text-align:center;
+    font-family:Arial;
+    padding-top:150px;
+}
+
+input{
+    padding:10px;
+    width:220px;
+}
+
+button{
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+#terminal{
+    color:#00ff00;
+    font-family:Courier New, monospace;
+    font-size:22px;
+    white-space:pre-line;
+    text-align:left;
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+}
+</style>
+
 </head>
-<body style="background:black;color:white;text-align:center;font-family:Arial;padding-top:150px;">
 
-    <h1>PRIVATE ACCESS REQUIRED</h1>
+<body>
 
-    <br>
+<div id="loginBox">
 
-    <input id="username" type="text" placeholder="Username">
+<h1>PRIVATE ACCESS REQUIRED</h1>
 
-    <br><br>
+<br>
 
-    <input id="password" type="password" placeholder="Password">
+<input id="username" type="text" placeholder="Username">
 
-    <br><br>
+<br><br>
 
-    <button onclick="login()">LOGIN</button>
+<input id="password" type="password" placeholder="Password">
 
-    <p id="message"></p>
+<br><br>
 
-    <script>
-        function login() {
+<button onclick="login()">LOGIN</button>
 
-            let user = document.getElementById("username").value;
-            let pass = document.getElementById("password").value;
+<p id="message"></p>
 
-            if(user === "love of my life" && pass === "110790"){
-               document.body.innerHTML = `
-<div id="terminal"
-style="
-background:black;
-color:#00ff00;
-font-family:Courier New;
-padding:50px;
-font-size:22px;
-white-space:pre-line;
-">
 </div>
-`;
 
-let text =
+<script>
+
+function login(){
+
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if(user === "love of my life" && pass === "110790"){
+
+        document.body.innerHTML = `
+        <div id="terminal"></div>
+        `;
+
+        let text =
 `> ACCESS GRANTED ❤️
 
 > Initializing birthday protocol...
@@ -56,23 +87,27 @@ COMPLETE
 
 > Result found ✓`;
 
-let i = 0;
+        let i = 0;
 
-function typeWriter() {
-   function typeWriter() {
-    if (i < text.length) {
-        document.getElementById("terminal").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 35);
-    } else {
+        function typeWriter(){
 
-        setTimeout(function(){
+            if(i < text.length){
 
-            document.getElementById("terminal").innerHTML += `
+                document.getElementById("terminal").innerHTML += text.charAt(i);
+
+                i++;
+
+                setTimeout(typeWriter,35);
+
+            }else{
+
+                setTimeout(function(){
+
+                    document.getElementById("terminal").innerHTML += `
 
 <br><br>
 
-<button
+<button id="continueBtn"
 style="
 background:black;
 color:#00ff00;
@@ -87,19 +122,26 @@ cursor:pointer;
 
 `;
 
-        },3000);
+                },3000);
+
+            }
+
+        }
+
+        typeWriter();
 
     }
+
+    else{
+
+        document.getElementById("message").innerHTML =
+        "Wrong credentials";
+
+    }
+
 }
 
-typeWriter();
-            }
-            else{
-                document.getElementById("message").innerHTML =
-                "Wrong credentials";
-            }
-        }
-    </script>
+</script>
 
 </body>
 </html>
