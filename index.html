@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unlock Your Gift</title>
+</head>
+<body style="background:black;color:white;text-align:center;font-family:Arial;padding-top:150px;">
+
+    <h1>PRIVATE ACCESS REQUIRED</h1>
+
+    <br>
+
+    <input id="username" type="text" placeholder="Username">
+
+    <br><br>
+
+    <input id="password" type="password" placeholder="Password">
+
+    <br><br>
+
+    <button onclick="login()">LOGIN</button>
+
+    <p id="message"></p>
+
+    <script>
+        function login() {
+
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+
+            if(user === "love of my life" && pass === "110790"){
+                document.getElementById("message").innerHTML =
+                "❤️ ACCESS GRANTED ❤️";
+            }
+            else{
+                document.getElementById("message").innerHTML =
+                "Wrong credentials";
+            }
+        }
+    </script>
+
+</body>
+</html>
