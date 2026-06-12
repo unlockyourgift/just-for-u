@@ -104,12 +104,14 @@ COMPLETE
 
                 setTimeout(function(){
 
-                    document.getElementById("terminal").innerHTML += `
+                   document.getElementById("terminal").innerHTML += `
 
 <br><br>
 
-<button id="continueBtn" onclick="showMessagePage()"
+<button id="continueBtn"
 style="
+opacity:0;
+transition:opacity 1.5s ease;
 background:black;
 color:#00ff00;
 border:1px solid #00ff00;
@@ -117,11 +119,17 @@ padding:12px 25px;
 font-size:20px;
 font-family:Courier New;
 cursor:pointer;
-">
+"
+onclick="showMessagePage()"
+>
 [ CONTINUE ]
 </button>
 
 `;
+
+setTimeout(function(){
+    document.getElementById("continueBtn").style.opacity="1";
+},100);
 
                 },3000);
 
@@ -154,30 +162,29 @@ padding-top:120px;
 height:100vh;
 ">
 
-<h1>Happy Birthday ❤️</h1>
+<h1 id="line1" style="opacity:0;">Happy Birthday, My Love ❤️</h1>
 
-<br>
+<p id="line2" style="opacity:0;font-size:24px;">
+Today is all about you.
+</p>
 
-<p style="font-size:24px;">
+<p id="line3" style="opacity:0;font-size:24px;">
 There are many things I could have given you today...
 </p>
 
-<br>
-
-<p style="font-size:24px;">
+<p id="line4" style="opacity:0;font-size:24px;">
 But I wanted to give you something that lasts longer than a gift.
 </p>
 
-<br>
-
-<p style="font-size:24px;">
+<p id="line5" style="opacity:0;font-size:24px;">
 Something made only for you.
 </p>
 
-<br><br><br>
+<br><br>
 
-<button
+<button id="surpriseBtn"
 style="
+opacity:0;
 background:black;
 color:white;
 border:1px solid white;
@@ -191,6 +198,16 @@ cursor:pointer;
 </div>
 
 `;
+
+setTimeout(()=>{document.getElementById("line1").style.opacity="1";},500);
+setTimeout(()=>{document.getElementById("line2").style.opacity="1";},1800);
+setTimeout(()=>{document.getElementById("line3").style.opacity="1";},3300);
+setTimeout(()=>{document.getElementById("line4").style.opacity="1";},4800);
+setTimeout(()=>{document.getElementById("line5").style.opacity="1";},6300);
+
+setTimeout(()=>{
+document.getElementById("surpriseBtn").style.opacity="1";
+},8300);
 
 }
 </script>
