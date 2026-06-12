@@ -28,23 +28,45 @@
             let pass = document.getElementById("password").value;
 
             if(user === "love of my life" && pass === "110790"){
-                document.body.innerHTML = `
-<div style="background:black;color:#00ff00;font-family:Courier New;padding:50px;font-size:22px;">
-> ACCESS GRANTED ❤️<br><br>
-
-> Initializing birthday protocol...<br><br>
-
-> Loading memories...<br>
-██████████ 100%<br><br>
-
-> Checking happiness level...<br>
-COMPLETE<br><br>
-
-> Searching for the best thing that happened to me...<br><br>
-
-> Result found ✓
+               document.body.innerHTML = `
+<div id="terminal"
+style="
+background:black;
+color:#00ff00;
+font-family:Courier New;
+padding:50px;
+font-size:22px;
+white-space:pre-line;
+">
 </div>
 `;
+
+let text =
+`> ACCESS GRANTED ❤️
+
+> Initializing birthday protocol...
+
+> Loading memories...
+██████████ 100%
+
+> Checking happiness level...
+COMPLETE
+
+> Searching for the best thing that happened to me...
+
+> Result found ✓`;
+
+let i = 0;
+
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("terminal").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 35);
+    }
+}
+
+typeWriter();
             }
             else{
                 document.getElementById("message").innerHTML =
