@@ -28,8 +28,23 @@
             let pass = document.getElementById("password").value;
 
             if(user === "love of my life" && pass === "110790"){
-                document.getElementById("message").innerHTML =
-                "❤️ ACCESS GRANTED ❤️";
+                document.body.innerHTML = `
+<div style="background:black;color:#00ff00;font-family:Courier New;padding:50px;font-size:22px;">
+> ACCESS GRANTED ❤️<br><br>
+
+> Initializing birthday protocol...<br><br>
+
+> Loading memories...<br>
+██████████ 100%<br><br>
+
+> Checking happiness level...<br>
+COMPLETE<br><br>
+
+> Searching for the best thing that happened to me...<br><br>
+
+> Result found ✓
+</div>
+`;
             }
             else{
                 document.getElementById("message").innerHTML =
