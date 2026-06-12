@@ -59,10 +59,36 @@ COMPLETE
 let i = 0;
 
 function typeWriter() {
+   function typeWriter() {
     if (i < text.length) {
         document.getElementById("terminal").innerHTML += text.charAt(i);
         i++;
         setTimeout(typeWriter, 35);
+    } else {
+
+        setTimeout(function(){
+
+            document.getElementById("terminal").innerHTML += `
+
+<br><br>
+
+<button
+style="
+background:black;
+color:#00ff00;
+border:1px solid #00ff00;
+padding:12px 25px;
+font-size:20px;
+font-family:Courier New;
+cursor:pointer;
+">
+[ CONTINUE ]
+</button>
+
+`;
+
+        },3000);
+
     }
 }
 
