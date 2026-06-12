@@ -325,30 +325,57 @@ let text =
 
 > Loading special moments...
 
-> Memory file loaded ✓
-
-> Video coming soon...`;
+> Memory file loaded ✓`;
 
 let i = 0;
 
 function typeMemory(){
 
-if(i < text.length){
+    if(i < text.length){
 
-document.getElementById("memoryTerminal").innerHTML += text.charAt(i);
+        document.getElementById("memoryTerminal").innerHTML += text.charAt(i);
 
-i++;
+        i++;
 
-setTimeout(typeMemory,40);
+        setTimeout(typeMemory,40);
 
-}
+    }
+
+    else{
+
+        setTimeout(() => {
+
+            document.body.innerHTML = `
+            <video
+                id="birthdayVideo"
+                autoplay
+                controls
+                playsinline
+                style="
+                    position:fixed;
+                    top:0;
+                    left:0;
+                    width:100%;
+                    height:100%;
+                    object-fit:contain;
+                    background:black;
+                ">
+                <source src="birthday.MOV">
+            </video>
+            `;
+
+            const video = document.getElementById("birthdayVideo");
+
+            video.onended = function(){
+
+                window.location.href = "final.html";
+
+            };
+
+        }, 3000);
+
+    }
 
 }
 
 typeMemory();
-
-}
-</script>
-
-</body>
-</html>
