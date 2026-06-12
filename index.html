@@ -183,6 +183,7 @@ Something made only for you.
 <br><br>
 
 <button id="surpriseBtn"
+onclick="showWarningPage()"
 style="
 opacity:0;
 transition:opacity 1.5s ease;
@@ -209,6 +210,90 @@ setTimeout(()=>{document.getElementById("line5").style.opacity="1";},6300);
 setTimeout(()=>{
 document.getElementById("surpriseBtn").style.opacity="1";
 },12300);
+
+}
+    function showWarningPage(){
+
+document.body.innerHTML = `
+
+<div style="
+background:black;
+color:white;
+font-family:Arial;
+text-align:center;
+padding-top:120px;
+height:100vh;
+">
+
+<h1 id="warningTitle"
+style="
+opacity:0;
+transition:opacity 1.5s ease;
+color:#ff4444;
+font-size:52px;
+">
+⚠ WARNING ⚠
+</h1>
+
+<br><br>
+
+<div id="warningBox"
+style="
+opacity:0;
+transition:opacity 1.5s ease;
+border:1px solid white;
+padding:30px;
+width:70%;
+max-width:700px;
+margin:auto;
+font-size:24px;
+line-height:1.8;
+">
+
+The next few minutes contain an unusual amount of cuteness, memories and love.
+
+<br><br>
+
+Proceed at your own risk.
+
+<br><br>
+
+Possible side effects may include:
+smiling, blushing and revisiting memories.
+
+</div>
+
+<br><br><br>
+
+<button id="readyBtn"
+style="
+opacity:0;
+transition:opacity 1.5s ease;
+background:black;
+color:white;
+border:1px solid white;
+padding:15px 30px;
+font-size:20px;
+cursor:pointer;
+">
+[ I'M READY ]
+</button>
+
+</div>
+
+`;
+
+setTimeout(()=>{
+document.getElementById("warningTitle").style.opacity="1";
+},500);
+
+setTimeout(()=>{
+document.getElementById("warningBox").style.opacity="1";
+},2000);
+
+setTimeout(()=>{
+document.getElementById("readyBtn").style.opacity="1";
+},4000);
 
 }
 </script>
