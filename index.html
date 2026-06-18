@@ -453,6 +453,8 @@ box-sizing:border-box;
         width:90px;
         z-index:100;
         opacity:0;
+        touch-action:none;
+cursor:pointer;
         transition:
 opacity 1s ease,
 top 0.08s linear,
@@ -485,9 +487,22 @@ setTimeout(() => {
     document.getElementById("mazeImage").style.opacity = "1";
     document.getElementById("ayman").style.opacity = "1";
     document.getElementById("menna").style.opacity = "1";
-
+document.getElementById("ayman").onclick = function(){
+    alert("clicked");
+};
 }, 500);
 }
+    let dragging = false;
+
+document.addEventListener("mousedown", function(e){
+    if(e.target.id === "ayman"){
+        dragging = true;
+    }
+});
+
+document.addEventListener("mouseup", function(){
+    dragging = false;
+});
     showMazePage();
 </script>
 
