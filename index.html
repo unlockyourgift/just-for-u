@@ -487,9 +487,7 @@ setTimeout(() => {
     document.getElementById("mazeImage").style.opacity = "1";
     document.getElementById("ayman").style.opacity = "1";
     document.getElementById("menna").style.opacity = "1";
-document.getElementById("ayman").onclick = function(){
-    alert("clicked");
-};
+
 }, 500);
 }
     let dragging = false;
@@ -502,6 +500,17 @@ document.addEventListener("mousedown", function(e){
 
 document.addEventListener("mouseup", function(){
     dragging = false;
+});
+    document.addEventListener("mousemove", function(e){
+
+    if(!dragging) return;
+
+    document.getElementById("ayman").style.top =
+        (e.clientY - 45) + "px";
+
+    document.getElementById("ayman").style.right =
+        (window.innerWidth - e.clientX - 45) + "px";
+
 });
     showMazePage();
 </script>
