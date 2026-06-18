@@ -443,7 +443,32 @@ box-sizing:border-box;
             transition:opacity 2s ease;
         "
     >
+<img
+    id="ayman"
+    src="ayman.png"
+    style="
+        position:absolute;
+        top:120px;
+        right:20px;
+        width:60px;
+        z-index:100;
+        opacity:0;
+        transition:all 4s linear;
+    "
+>
 
+<img
+    id="menna"
+    src="menna.png"
+    style="
+        position:absolute;
+        top:420px;
+        left:20px;
+        width:60px;
+        z-index:100;
+        opacity:0;
+    "
+>
 </div>
 
     `;
@@ -453,6 +478,8 @@ setTimeout(() => {
 
 setTimeout(() => {
     document.getElementById("mazeImage").style.opacity = "1";
+    document.getElementById("ayman").style.opacity = "1";
+document.getElementById("menna").style.opacity = "1";
 }, 2000);
 }
 </script>
