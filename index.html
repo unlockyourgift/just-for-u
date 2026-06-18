@@ -431,7 +431,12 @@ box-sizing:border-box;
         "
     >
         find me ♥
-    </div>
+    <div
+    style="
+        position:relative;
+        display:inline-block;
+    "
+>
 
     <img
         id="mazeImage"
@@ -443,19 +448,21 @@ box-sizing:border-box;
             transition:opacity 1s ease;
         "   
     >
-    <img
+   <img
     id="mazePath"
     src="maze-path-red.png"
     style="
         position:absolute;
         top:0;
         left:0;
- width:98vw;
-            max-width:800px;
-            opacity:0;
+        width:98vw;
+        max-width:800px;
+        opacity:0;
         pointer-events:none;
+        z-index:10;
     "
 >
+</div>
 <img
     id="ayman"
     src="ayman.png"
