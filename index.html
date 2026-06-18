@@ -610,13 +610,28 @@ setTimeout(() => {
     ayman.style.width = "150px";
     menna.style.width = "150px";
 
-    ayman.style.top = "220px";
+    ayman.style.top = "280px";
     ayman.style.left = "42%";
     ayman.style.right = "auto";
 
-    menna.style.top = "220px";
+    menna.style.top = "280px";
     menna.style.left = "52%";
-document.getElementById("endingMessage").style.opacity = "1";
+
+setTimeout(() => {
+document.getElementById("line1").style.opacity = "1";
+}, 500);
+
+setTimeout(() => {
+document.getElementById("line2").style.opacity = "1";
+}, 1800);
+
+setTimeout(() => {
+document.getElementById("line3").style.opacity = "1";
+}, 3100);
+
+setTimeout(() => {
+document.getElementById("openHeartBtn").style.opacity = "1";
+}, 4500); 
 }, 800);
 }
         });
@@ -635,15 +650,26 @@ transition:opacity 2s ease;
 z-index:200;
 ">
 
-<p style="font-size:28px;line-height:1.7;margin-bottom:30px;">
-There was only one path.<br>
-But even if there had been a thousand,<br>
+<p id="line1"
+style="opacity:0;transition:opacity 1.5s ease;font-size:28px;">
+There was only one path.
+</p>
+
+<p id="line2"
+style="opacity:0;transition:opacity 1.5s ease;font-size:28px;">
+But even if there had been a thousand,
+</p>
+
+<p id="line3"
+style="opacity:0;transition:opacity 1.5s ease;font-size:28px;">
 I would still have known<br>
 you'd find me. ❤️
 </p>
 
 <button id="openHeartBtn"
 style="
+opacity:0;
+transition:opacity 1.5s ease;
 padding:15px 35px;
 font-size:18px;
 border:none;
@@ -655,7 +681,6 @@ font-weight:bold;
 ">
 OPEN MY HEART
 </button>
-
 </div>
 </body>
 </html>
