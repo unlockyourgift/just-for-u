@@ -367,8 +367,40 @@ function typeMemory(){
 
             video.onended = function(){
 
-                showMazePage();
+video.onended = function(){
 
+    document.body.innerHTML = `
+    <div id="findMeScreen"
+    style="
+    background:black;
+    color:white;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:42px;
+    font-family:Arial;
+    opacity:0;
+    transition:opacity 1.5s ease;
+    ">
+    find me ♥
+    </div>
+    `;
+
+    setTimeout(()=>{
+        document.getElementById("findMeScreen").style.opacity="1";
+    },100);
+
+    setTimeout(()=>{
+        document.getElementById("findMeScreen").style.opacity="0";
+    },2500);
+
+    setTimeout(()=>{
+        showMazePage();
+    },4200);
+
+};
             };
 
         }, 3000);
@@ -393,7 +425,7 @@ function showMazePage(){
     ">
 
         <img
-            src="maza.png"
+            src="maze.png"
             style="
                 width:90vw;
                 max-width:500px;
