@@ -536,24 +536,60 @@ document.addEventListener("touchend", function(){
 
     let touch = e.touches[0];
 
-    document.getElementById("ayman").style.top =
-        (touch.clientY - 45) + "px";
+   let maze = document.getElementById("mazeImage");
+let rect = maze.getBoundingClientRect();
 
-    document.getElementById("ayman").style.right =
-        (window.innerWidth - touch.clientX - 45) + "px";
+let x = touch.clientX;
+let y = touch.clientY;
 
-});
-    document.addEventListener("mousemove", function(e){
+let ayman = document.getElementById("ayman");
 
-    if(!dragging) return;
+ayman.style.top = (y - 45) + "px";
+ayman.style.right = (window.innerWidth - x - 45) + "px";
 
-    document.getElementById("ayman").style.top =
-        (e.clientY - 45) + "px";
+const startTop = 300;
+const startRight = 65;
 
-    document.getElementById("ayman").style.right =
-        (window.innerWidth - e.clientX - 45) + "px";
+const allowedZones = [
 
-});
+(x > rect.left + 250 && x < rect.left + 520 && y > rect.top + 80 && y < rect.top + 140),
+
+(x > rect.left + 470 && x < rect.left + 540 && y > rect.top + 80 && y < rect.top + 220),
+
+(x > rect.left + 300 && x < rect.left + 540 && y > rect.top + 180 && y < rect.top + 250),
+
+(x > rect.left + 300 && x < rect.left + 520 && y > rect.top + 240 && y < rect.top + 320),
+
+(x > rect.left + 390 && x < rect.left + 460 && y > rect.top + 300 && y < rect.top + 430),
+
+(x > rect.left + 120 && x < rect.left + 460 && y > rect.top + 420 && y < rect.top + 500),
+
+(x > rect.left + 120 && x < rect.left + 220 && y > rect.top + 240 && y < rect.top + 420),
+
+(x > rect.left + 60 && x < rect.left + 160 && y > rect.top + 240 && y < rect.top + 320),
+
+(x > rect.left + 520 && x < rect.left + 650 && y > rect.top + 80 && y < rect.top + 140),
+
+(x > rect.left + 520 && x < rect.left + 590 && y > rect.top + 80 && y < rect.top + 360),
+
+(x > rect.left + 520 && x < rect.left + 660 && y > rect.top + 340 && y < rect.top + 420),
+
+(x > rect.left + 300 && x < rect.left + 660 && y > rect.top + 500 && y < rect.top + 570)
+
+];
+
+if (!allowedZones.some(Boolean)) {
+    ayman.style.top = startTop + "px";
+    ayman.style.right = startRight + "px";
+}
+        if (
+x > rect.left - 20 &&
+x < rect.left + 80 &&
+y > rect.top + 220 &&
+y < rect.top + 320
+){
+    alert("You found me ❤️");
+}
     showMazePage();
 </script>
 
