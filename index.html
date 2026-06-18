@@ -365,8 +365,6 @@ function typeMemory(){
 
             const video = document.getElementById("birthdayVideo");
 
-            video.onended = function(){
-
 video.onended = function(){
 
     document.body.innerHTML = `
@@ -393,12 +391,8 @@ video.onended = function(){
     },100);
 
     setTimeout(()=>{
-        document.getElementById("findMeScreen").style.opacity="0";
-    },2500);
-
-    setTimeout(()=>{
         showMazePage();
-    },4200);
+    },2000);
 
 };
             };
