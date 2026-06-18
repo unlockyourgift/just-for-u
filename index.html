@@ -408,27 +408,51 @@ function showMazePage(){
 
     document.body.innerHTML = `
 
-    <div style="
-        background:black;
-        width:100vw;
-        height:100vh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-    ">
+   <div style="
+    background:black;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+">
 
-        <img
-            src="maze.png"
-            style="
-                width:90vw;
-                max-width:500px;
-            "
-        >
-
+    <div
+        id="findMeText"
+        style="
+            color:white;
+            font-size:42px;
+            font-family:Arial;
+            margin-bottom:30px;
+            opacity:0;
+            transition:opacity 1.5s ease;
+        "
+    >
+        find me ♥
     </div>
 
-    `;
+    <img
+        id="mazeImage"
+        src="maze.png"
+        style="
+            width:98vw;
+            max-width:800px;
+            opacity:0;
+            transition:opacity 2s ease;
+        "
+    >
 
+</div>
+
+    `;
+setTimeout(() => {
+    document.getElementById("findMeText").style.opacity = "1";
+}, 100);
+
+setTimeout(() => {
+    document.getElementById("mazeImage").style.opacity = "1";
+}, 2000);
 }
 </script>
 
