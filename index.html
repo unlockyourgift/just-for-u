@@ -440,7 +440,7 @@ box-sizing:border-box;
             width:98vw;
             max-width:800px;
             opacity:0;
-            transition:opacity 2s ease;
+            transition:opacity 1s ease;
         "
     >
 <img
@@ -448,12 +448,12 @@ box-sizing:border-box;
     src="ayman.png"
     style="
         position:absolute;
-        top:120px;
-        right:20px;
+        top:180px;
+        right:70px;
         width:60px;
         z-index:100;
         opacity:0;
-        transition:all 4s linear;
+        transition:opacity 1s ease;
     "
 >
 
@@ -462,11 +462,12 @@ box-sizing:border-box;
     src="menna.png"
     style="
         position:absolute;
-        top:420px;
-        left:20px;
+        top:430px;
+        left:65px;
         width:60px;
         z-index:100;
         opacity:0;
+        transition:opacity 1s ease;
     "
 >
 </div>
@@ -477,10 +478,12 @@ setTimeout(() => {
 }, 100);
 
 setTimeout(() => {
+
     document.getElementById("mazeImage").style.opacity = "1";
     document.getElementById("ayman").style.opacity = "1";
-document.getElementById("menna").style.opacity = "1";
-}, 2000);
+    document.getElementById("menna").style.opacity = "1";
+
+}, 500);
 }
 </script>
 
