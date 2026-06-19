@@ -495,8 +495,54 @@ right 0.08s linear;
         transition:opacity 1s ease;
     "
 >
+<div id="endingMessage" style="
+opacity:0;
+position:absolute;
+top:470px;
+left:50%;
+transform:translateX(-50%);
+text-align:center;
+color:white;
+font-family:Arial,sans-serif;
+transition:opacity 2s ease;
+z-index:200;
+">
 
+<p id="line1"
+style="opacity:0;transition:opacity 1.5s ease;font-size:32px;">
+There was only one path.
+</p>
+
+<p id="line2"
+style="opacity:0;transition:opacity 1.5s ease;font-size:32px;">
+But even if there had been a thousand,
+</p>
+
+<p id="line3"
+style="opacity:0;transition:opacity 1.5s ease;font-size:36px;">
+I would still have known<br>
+you'd find me. ❤️
+</p>
+
+<button id="openHeartBtn"
+style="
+opacity:0;
+transition:opacity 1.5s ease;
+padding:22px 55px;
+font-size:24px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+background:white;
+color:black;
+font-weight:bold;
+">
+OPEN MY HEART
+</button>
+    
+</div>
     `;
+    
 setTimeout(() => {
     document.getElementById("findMeText").style.opacity = "1";
 }, 100);
@@ -631,14 +677,20 @@ document.getElementById("line3").style.opacity = "1";
 }, 3100);
 
 setTimeout(() => {
-document.getElementById("openHeartBtn").style.opacity = "1";
+
+    let btn = document.getElementById("openHeartBtn");
+
+    btn.style.opacity = "1";
+
+    btn.onclick = function() {
+        showLetterPage1();
+    };
+
 }, 4500); 
     }, 800);
 }
         });
-    document.getElementById("openHeartBtn").onclick = function() {
-    showLetterPage1();
-};
+
     function showLetterPage1() {
 
 document.body.innerHTML = `
@@ -904,52 +956,7 @@ FINISH ❤️
 `;
 }
     </script>
-<div id="endingMessage" style="
-opacity:0;
-position:absolute;
-top:470px;
-left:50%;
-transform:translateX(-50%);
-text-align:center;
-color:white;
-font-family:Arial,sans-serif;
-transition:opacity 2s ease;
-z-index:200;
-">
 
-<p id="line1"
-style="opacity:0;transition:opacity 1.5s ease;font-size:32px;">
-There was only one path.
-</p>
-
-<p id="line2"
-style="opacity:0;transition:opacity 1.5s ease;font-size:32px;">
-But even if there had been a thousand,
-</p>
-
-<p id="line3"
-style="opacity:0;transition:opacity 1.5s ease;font-size:36px;">
-I would still have known<br>
-you'd find me. ❤️
-</p>
-
-<button id="openHeartBtn"
-style="
-opacity:0;
-transition:opacity 1.5s ease;
-padding:22px 55px;
-font-size:24px;
-border:none;
-border-radius:50px;
-cursor:pointer;
-background:white;
-color:black;
-font-weight:bold;
-">
-OPEN MY HEART
-</button>
-    
-</div>
     
 </body>
 </html>
