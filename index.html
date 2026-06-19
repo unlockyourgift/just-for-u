@@ -955,7 +955,7 @@ FINISH ❤️
 </div>
 `;
 }
-    function showLoveOS() {
+   function showLoveOS() {
 
 document.body.innerHTML = `
 <div style="
@@ -984,46 +984,32 @@ LoveOS
 <div style="
 font-size:20px;
 opacity:0.7;
-margin-bottom:50px;
+margin-bottom:60px;
 ">
 Version 11.07
 </div>
 
-<div style="
-font-size:28px;
-margin-bottom:35px;
-">
-Waiting for you again and forever
-</div>
-
-<div style="
-font-size:22px;
-line-height:1.8;
-margin-bottom:35px;
-">
-Built with love<br>
-For Ayman
-</div>
-
 <div id="lineA" style="
-margin-top:40px;
-font-size:24px;
+font-size:28px;
+min-height:40px;
 "></div>
 
 <div id="lineB" style="
-margin-top:20px;
-font-size:24px;
+font-size:22px;
+margin-top:35px;
+min-height:35px;
 "></div>
 
 <div id="lineC" style="
-margin-top:10px;
-font-size:24px;
+font-size:22px;
+margin-top:8px;
+min-height:35px;
 "></div>
 
 <div id="heart" style="
 opacity:0;
 font-size:55px;
-margin-top:30px;
+margin-top:35px;
 transition:1s;
 ">
 ❤️
@@ -1033,28 +1019,34 @@ transition:1s;
 onclick="location.reload()"
 style="
 opacity:0;
-margin-top:30px;
+margin-top:25px;
 font-size:22px;
 cursor:pointer;
 font-family:'Courier New', monospace;
+transition:1s;
 ">
 > Play Again
 </div>
-`;
-}
-    setTimeout(() => {
 
-typeWriter("lineA",
+</div>
+`;
+
+setTimeout(() => {
+
+typeWriter(
+"lineA",
 "Waiting for you again and forever",
 40,
 () => {
 
-typeWriter("lineB",
+typeWriter(
+"lineB",
 "Built with love",
 40,
 () => {
 
-typeWriter("lineC",
+typeWriter(
+"lineC",
 "For Ayman",
 40,
 () => {
@@ -1065,7 +1057,7 @@ setTimeout(() => {
 
 document.getElementById("playAgain").style.opacity = "1";
 
-}, 700);
+}, 800);
 
 });
 
@@ -1075,6 +1067,7 @@ document.getElementById("playAgain").style.opacity = "1";
 
 }, 500);
 
+}
 
 function typeWriter(id, text, speed, callback) {
 
