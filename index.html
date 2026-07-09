@@ -558,8 +558,6 @@ setTimeout(() => {
 
 }, 500);
 }
-    let lastGoodTop = 300;
-let lastGoodRight = 65;
     let dragging = false;
 
 document.addEventListener("mousedown", function(e){
@@ -597,48 +595,8 @@ let ayman = document.getElementById("ayman");
 ayman.style.top = (y - 45) + "px";
 ayman.style.right = (window.innerWidth - x - 45) + "px";
 
-const startTop = 300;
-const startRight = 65;
 
-const allowedZones = [
 
-(x > rect.left + 140 && x < rect.left + 630 && y > rect.top - 30 && y < rect.top + 250),
-
-(x > rect.left + 380 && x < rect.left + 630 && y > rect.top - 10 && y < rect.top + 310),
-
-(x > rect.left + 210 && x < rect.left + 630 && y > rect.top + 90 && y < rect.top + 340),
-
-(x > rect.left + 210 && x < rect.left + 610 && y > rect.top + 150 && y < rect.top + 410),
-
-(x > rect.left + 300 && x < rect.left + 550 && y > rect.top + 210 && y < rect.top + 520),
-
-(x > rect.left + 30 && x < rect.left + 550 && y > rect.top + 330 && y < rect.top + 590),
-
-(x > rect.left + 30 && x < rect.left + 310 && y > rect.top + 150 && y < rect.top + 510),
-
-(x > rect.left - 30 && x < rect.left + 250 && y > rect.top + 150 && y < rect.top + 410),
-
-(x > rect.left + 430 && x < rect.left + 740 && y > rect.top - 10 && y < rect.top + 230),
-
-(x > rect.left + 430 && x < rect.left + 680 && y > rect.top - 10 && y < rect.top + 450),
-
-(x > rect.left + 430 && x < rect.left + 750 && y > rect.top + 250 && y < rect.top + 510),
-    
-    (x > rect.left + 320 && x < rect.left + 620 && y > rect.top + 380 && y < rect.top + 560),
-
-(x > rect.left + 210 && x < rect.left + 750 && y > rect.top + 410 && y < rect.top + 660)
-];
-if (allowedZones.some(Boolean)) {
-
-    lastGoodTop = y - 45;
-    lastGoodRight = window.innerWidth - x - 45;
-
-} else {
-
-    ayman.style.top = lastGoodTop + "px";
-    ayman.style.right = lastGoodRight + "px";
-
-}
         if (
 x > rect.left - 20 &&
 x < rect.left + 80 &&
